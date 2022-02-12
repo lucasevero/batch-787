@@ -1,0 +1,22 @@
+<h1>My TripAdvisor</h1>
+<h2>Here you can check my favorite restaurants</h2>
+
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li>
+      <a href="/restaurants/<%= restaurant.id %>"><%= restaurant.name %></a>
+    </li>
+  <% end %>
+</ul>
+
+
+<h3>Create a new restaurant!</h3>
+<form action="/restaurants" method="post">
+  <label for="name">Name:</label>
+  <input type="text" name="name" id="name">
+
+  <label for="city">City:</label>
+  <input type="text" name="city" id="city">
+
+  <input type="submit">
+</form>
